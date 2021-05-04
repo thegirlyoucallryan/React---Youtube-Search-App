@@ -1,0 +1,16 @@
+.item {
+    display: flex !important;
+    align-items: center !important;
+    cursor: pointer;
+    background-color:rgb(247, 233, 233);
+
+}
+
+.header{
+    color: rgb(35, 88, 92);
+    font-size: 18px;
+}
+
+.item.item img {
+    max-width: 190px;
+}
