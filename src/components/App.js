@@ -1,50 +1,41 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React, {useState, useEffect} from 'react';
+
 import  './App.css'
-import SearchBar from './SearchBar'
-import youtube from '../apis/youtube'
-import VideoList from './VideoList'
-import VideoDetail from './VideoDetail'
+import SearchBar from './SearchBar';
+import useVideos from '../hooks/useVideos';
+import VideoList from './VideoList';
+import VideoDetail from './VideoDetail';
 
 
-class App extends React.Component {
-    state = {videos: [], selectedVideo: null}
+const App = () => {
+    const [videos, search] = useVideos('press to handstand workouts')
+    const [selectedVideo, setSelectedVideo] = useState(null);
 
-    onQuerySubmit = async (query) => {
-       const response = await youtube.get('/search', {
-            params: {
-                q: query
-            }
-        })
+   useEffect(() => {
+       setSelectedVideo(videos[0])
+   }, [videos]);
+    
+
+   
         
-        this.setState({
-            videos: response.data.items,
-            selectedVideo: response.data.items[0]
-        })
-        console.log(this.state)
-        
-    };
+         
+    
+ 
 
-    onVideoSelect = (video) => {
-        console.log('from the app', video)
-        this.setState({selectedVideo: video});
-    };
 
-    render(){
 
-      
-        return (
+    return (
         <div><h1>YouTube Video Search</h1>
         <div>
-        <SearchBar onFormSubmit={this.onQuerySubmit} />
+        <SearchBar onFormSubmit={search} />
         <div className="ui grid">
             <div className="ui row">
                 <div className="eleven wide column">
-        <VideoDetail video={this.state.selectedVideo} />
+        <VideoDetail video={selectedVideo} />
         </div>
         <div className="five wide column">
-        <VideoList onVideoSelect={this.onVideoSelect} videos={this.state.videos} />
-        Ryan found {this.state.videos.length} videos!
+        <VideoList onVideoSelect={setSelectedVideo} videos={videos} />
+        
         </div>
         
         </div>
@@ -52,10 +43,14 @@ class App extends React.Component {
         </div>
         </div>
         )
+    };
 
-    
-        
-    }
-}
+
+
+
 
 export default App;
+
+
+//when passing one argument ex. onVideoSelect={(video) => setSelectedVideo(video)} is equal to setSelectedVideo. react video 211 steven grider
+//data fetching code is good to use custom hooks for ie. the get( above) in onquerysubmit

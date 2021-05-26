@@ -1,16 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Red+Hat+Display&display=swap');
+
 .item {
     display: flex !important;
     align-items: center !important;
     cursor: pointer;
-    background-color:rgb(247, 233, 233);
+    background-color:rgba(216, 206, 206, 0.596);
+    border: 2.5px solid rgb(255, 255, 255)
+
+}
+ 
+.item :hover {   
+    font-size: 18px;
+    padding: 19px;
 
 }
 
 .header{
+    
+    font-family: 'Red Hat Display';
     color: rgb(35, 88, 92);
     font-size: 18px;
+    padding: 9px;
 }
 
 .item.item img {
-    max-width: 190px;
+    max-width: 150px;
+    border:.9px solid rgb(35, 88, 92)
 }

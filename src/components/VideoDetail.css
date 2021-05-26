@@ -1,7 +1,21 @@
-.description{
-    color: rgb(48, 131, 134)
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&family=Red+Hat+Display&display=swap');
+.ui {
+    background-color: rgba(255, 255, 255, 0.678) !important;
+    margin-left: 10px;
+   
 }
 
-.title {
-    background-color: rgb(240, 223, 223) !important;
+.desc{
+    background-color: rgba(238, 226, 226, 0.973);
+    padding: 20px;
+    border: 1px solid rgb(35, 94, 91);
+    margin: 8px 15px;
+}
+
+iframe{
+    max-height: 760px;
+    max-width: 1500px;
+    margin-left: 40px;
+  
 }

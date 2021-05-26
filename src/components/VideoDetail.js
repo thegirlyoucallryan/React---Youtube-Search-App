@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+
 import React from 'react';
 import './VideoDetail.css';
 
@@ -17,13 +17,13 @@ const VideoDetail = ({video}) => {
                 <iframe title="Video Player" src={videoSrc} />
          
         </div>
-        <div className="title">
-        <div className="ui segment">
+        {/* <div className="title"> */}
+        <div className="desc">
         <h4 className="header"> {video.snippet.title} </h4>
         <p className="description">{video.snippet.description}</p>
         </div>
         </div>
-        </div>
+     
 
 
     )
