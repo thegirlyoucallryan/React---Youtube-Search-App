@@ -27,3 +27,34 @@
     max-width: 150px;
     border:.9px solid rgb(35, 88, 92)
 }
+
+
+
+@media only screen and (max-width: 600px) {
+
+.item{
+    display: block !important;
+    margin-right: 50px;
+    
+    margin-left: -332px;
+}
+      
+.item.item img{
+    display: block !important;
+    grid-column: span;
+}
+
+.item :hover{
+    padding: 6px;
+    color:rgb(255, 255, 255)
+
+}
+
+.video-block{
+    margin-top: 400px;
+}
+      
+
+
+
+  }
